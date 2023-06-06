@@ -1,0 +1,39 @@
+==================
+Comment single line
+==================
+
+// This is a single-line comment on its own line
+
+---
+
+(source_file
+ (comment))
+
+==================
+Comment single line after code
+==================
+
+var commented = "comment"; // This comment shares a line with code that will execute
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (string_literal))
+ (comment))
+
+==================
+Comment multi line
+==================
+
+/*
+   This is a multi-line comment. Notice that the information
+   continues to appear as a comment as long as it remains
+   inside the comment delimiters.
+ */
+
+---
+
+(source_file
+ (comment))

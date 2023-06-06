@@ -1,0 +1,139 @@
+==================
+Variable declaration
+==================
+
+var _test = "TEST";
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (string_literal)))
+
+==================
+Variable declaration typed
+==================
+
+var _test = "TEST" as Lang.String;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (string_literal)
+  (type_identifier
+   type: (property_access
+     object: (identifier)
+     property: (identifier)))))
+
+
+==================
+Variable declaration typed without assignment
+==================
+
+var _test as Lang.String;
+
+---
+
+(source_file
+ (class_member
+  name: (identifier)
+  (type_identifier
+   type: (property_access
+     object: (identifier)
+     property: (identifier)))))
+
+==================
+Variable assignment
+==================
+
+public function test() {
+  _test = "TEST";
+}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list)
+  body: (block_statement
+    (expression_statement
+     (assignment_expression
+      left: (identifier)
+      right: (string_literal))))))
+
+==================
+Variable Array access
+==================
+
+var arr = [1, 2, 3];
+var z = arr[2] as Lang.Number;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_expression
+    (number_literal)
+    (number_literal)
+    (number_literal)))
+ (variable_declaration
+  name: (identifier)
+  value: (container_access
+    name: (identifier)
+    index: (number_literal))
+  (type_identifier
+   type: (property_access
+     object: (identifier)
+     property: (identifier)))))
+
+==================
+Constant declaration
+==================
+
+const PI = 3.14;
+const EAT_BANANAS = true;
+const BANANA_YELLOW = "#FFE135";
+
+---
+
+(source_file
+ (constant_declaration
+  name: (identifier)
+  value: (number_literal))
+ (constant_declaration
+  name: (identifier)
+  value: (boolean_literal))
+ (constant_declaration
+  name: (identifier)
+  value: (string_literal)))
+
+==================
+Symbols
+==================
+
+var a = :symbol_1;
+var b = :symbol_1;
+var c = :symbol_2 as Lang.Symbol;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (symbol))
+ (variable_declaration
+  name: (identifier)
+  value: (symbol))
+ (variable_declaration
+  name: (identifier)
+  value: (symbol)
+  (type_identifier
+   type: (property_access
+     object: (identifier)
+     property: (identifier)))))

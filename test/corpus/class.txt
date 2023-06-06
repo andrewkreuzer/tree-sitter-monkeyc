@@ -1,0 +1,29 @@
+==================
+Class
+==================
+
+class Test {}
+
+---
+
+(source_file
+ (class_definition
+  (identifier)
+  (block_statement)))
+
+==================
+Class with extends
+==================
+
+class Test2 extends Test.T {}
+
+---
+
+(source_file
+ (class_definition
+  (identifier)
+  (extends_clause
+   (property_access
+    (identifier)
+    (identifier)))
+  (block_statement)))

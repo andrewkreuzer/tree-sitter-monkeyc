@@ -1,0 +1,29 @@
+{
+  "name": "tree-sitter-monkeyc",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "parser",
+    "lexer"
+  ],
+  "main": "grammar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "move-highlights": "cp queries/highlights.scm ~/.config/nvim/queries/monkeyc/highlights.scm"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.monkeyc",
+      "file-types": [
+        "monkey-c",
+        "monkeyc",
+        "mc"
+      ]
+    }
+  ]
+}

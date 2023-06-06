@@ -1,0 +1,54 @@
+==================
+Operators varaible addition
+==================
+
+var z = arr[2] + x;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (binary_expression
+    left: (container_access
+      name: (identifier)
+      index: (number_literal))
+    operator: (operator)
+    right: (identifier))))
+
+==================
+Operators multiple
+==================
+
+var z = -1 + -arr[2] * x;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (binary_expression
+    left: (binary_expression
+      left: (unary_expression
+        expression: (number_literal))
+      operator: (operator)
+      right: (unary_expression
+        expression: (container_access
+          name: (identifier)
+          index: (number_literal))))
+    operator: (operator)
+    right: (identifier))))
+
+==================
+Operators not
+==================
+
+var z = !true;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (unary_expression
+    expression: (boolean_literal))))

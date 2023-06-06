@@ -1,0 +1,23 @@
+==================
+Import definition
+==================
+
+using Toybox.Application;
+using Toybox.Lang;
+using Toybox.WatchUi;
+
+---
+
+(source_file
+ (using_statement
+  (property_access
+   (identifier)
+   (identifier)))
+ (using_statement
+  (property_access
+   (identifier)
+   (identifier)))
+ (using_statement
+  (property_access
+   (identifier)
+   (identifier))))

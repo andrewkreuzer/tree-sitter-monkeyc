@@ -1,0 +1,52 @@
+==================
+Create an enum
+==================
+
+enum {
+  Monday,
+  Tuesday,
+  Wednesday
+}
+
+---
+
+(source_file
+ (enum_definition
+  (enum_entry
+   (identifier))
+  (enum_entry
+   (identifier))
+  (enum_entry
+   (identifier))))
+
+==================
+Create an enum
+==================
+
+enum {
+  x = 1337,
+  y,
+  z,
+  a = 0,
+  b,
+  c
+}
+
+---
+
+(source_file
+ (enum_definition
+  (enum_entry
+   (identifier)
+   (number_literal))
+  (enum_entry
+   (identifier))
+  (enum_entry
+   (identifier))
+  (enum_entry
+   (identifier)
+   (number_literal))
+  (enum_entry
+   (identifier))
+  (enum_entry
+   (identifier))))

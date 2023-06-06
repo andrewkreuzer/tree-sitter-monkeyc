@@ -1,0 +1,54 @@
+==================
+Exception
+==================
+
+try {
+    // Attempt to execute this code
+} catch (e) {
+    // Catch and handle any exceptions thrown
+}
+
+---
+
+(source_file
+ (try_catch_statement
+  (block_statement
+   (comment))
+  (parameter_list
+   (identifier))
+  (block_statement
+   (comment))))
+
+==================
+Exception with finally
+==================
+
+try {
+    // Attempt to execute this code
+} catch (e instanceof MyExceptionClass) {
+    // Catch and handle the MyExceptionClass exception
+} catch (e) {
+    // Catch all other exception types
+} finally {
+    // Execute this after the preceding try and catch statements are completed
+}
+
+---
+
+(source_file
+ (try_catch_statement
+  try: (block_statement
+    (comment))
+  catch: (parameter_list
+    (type_check_expression
+     left: (identifier)
+     operator: (object_operator)
+     right: (identifier)))
+  catch: (block_statement
+     (comment))
+  catch: (parameter_list
+    (identifier))
+  catch: (block_statement
+    (comment))
+  finally: (block_statement
+    (comment))))

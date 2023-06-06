@@ -1,0 +1,233 @@
+==================
+Array typeless
+==================
+
+var untypedArray = new [10];
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_constructor
+    size: (number_literal))))
+
+==================
+Array typed
+==================
+
+var typedArray = new Array<Number>[300];
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_constructor
+    (array_type
+     (identifier))
+    size: (number_literal))))
+
+==================
+Array assignment typeless
+==================
+
+var untypedArray = [1, 2, 3, 4, 5];
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_expression
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal))))
+
+==================
+Array assignment typed
+==================
+
+var typedArray = [1, 2, 3, 4, 5] as Array<Number>;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_expression
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (type_identifier
+     type: (array_type
+       (identifier))))))
+
+==================
+Array assignment complex typed
+==================
+
+var typedArray = [{:a => 1, :b => 2}, {:a => 1, :b => 2}] as Array<Dictionary<String, Number>>;
+
+---
+
+(source_file
+ (variable_declaration
+  (identifier)
+  (array_expression
+   (dictionary_expression
+    (dictionary_entry
+     (symbol)
+     (number_literal))
+    (dictionary_entry
+     (symbol)
+     (number_literal)))
+   (dictionary_expression
+    (dictionary_entry
+     (symbol)
+     (number_literal))
+    (dictionary_entry
+     (symbol)
+     (number_literal)))
+   (type_identifier
+    (array_type
+     (dictionary_type
+      (identifier)
+      (identifier)))))))
+
+==================
+Array multidimensional
+==================
+
+var array = [ [1,2], [3,4] ];
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_expression
+    (array_expression
+     (number_literal)
+     (number_literal))
+    (array_expression
+     (number_literal)
+     (number_literal)))))
+
+==================
+Dictionary creation
+==================
+
+var dict = { "a" => 1, "b" => 2 };
+var dict = { 2 => 1, 1 => 2 };
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (dictionary_expression
+    (dictionary_entry
+     key: (string_literal)
+     value: (number_literal))
+    (dictionary_entry
+     key: (string_literal)
+     value: (number_literal))))
+ (variable_declaration
+  name: (identifier)
+  value: (dictionary_expression
+    (dictionary_entry
+     key: (number_literal)
+     value: (number_literal))
+    (dictionary_entry
+     key: (number_literal)
+     value: (number_literal)))))
+
+==================
+Dictionary with symbols
+==================
+
+var dict = { :a => 1, :b => 2 };
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (dictionary_expression
+    (dictionary_entry
+     key: (symbol)
+     value: (number_literal))
+    (dictionary_entry
+     key: (symbol)
+     value: (number_literal)))))
+
+==================
+Dictionary empty
+==================
+
+var dict1 = {};
+
+---
+
+(source_file
+ (variable_declaration
+  (identifier)
+  (dictionary_expression)))
+
+==================
+Dictionary typed
+==================
+
+var x = {:a => "1", :b => "2"} as Dictionary<Symbol, String>;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (dictionary_expression
+    (dictionary_entry
+     key: (symbol)
+     value: (string_literal))
+    (dictionary_entry
+     key: (symbol)
+     value: (string_literal)))
+  (type_identifier
+   type: (dictionary_type
+     key: (identifier)
+     value: (identifier)))))
+
+==================
+Dictionary access
+==================
+
+public function test() {
+  var x = {} as Dictionary<Symbol, String>;
+  x[:a] = "test";
+}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list)
+  body: (block_statement
+    (variable_declaration
+     name: (identifier)
+     value: (dictionary_expression)
+     (type_identifier
+      type: (dictionary_type
+        key: (identifier)
+        value: (identifier))))
+    (variable_assignment
+     name: (container_access
+       name: (identifier)
+       index: (symbol))
+     value: (string_literal)))))

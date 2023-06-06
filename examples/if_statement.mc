@@ -1,0 +1,3 @@
+if (data == null) {
+    return;
+}

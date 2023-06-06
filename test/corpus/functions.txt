@@ -1,0 +1,189 @@
+==================
+Function
+==================
+
+public function test() {
+}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  (identifier)
+  (parameter_list)
+  (block_statement)))
+
+==================
+Function with parameters
+==================
+
+public function test(data, test) {}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list
+   (identifier)
+   (identifier))
+  body: (block_statement)))
+
+==================
+Function with typed parameters
+==================
+
+public function test(data as Sensor.Data, test as Test) {}
+
+---
+
+
+(source_file
+ (function_definition
+  (function_keyword)
+  (identifier)
+  (parameter_list
+   (identifier)
+   (type_identifier
+    (property_access
+     (identifier)
+     (identifier)))
+   (identifier)
+   (type_identifier
+    (identifier)))
+  (block_statement)))
+
+==================
+Function with typed return
+==================
+
+public function test() as Test {}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list)
+  (type_identifier
+   type: (identifier))
+  body: (block_statement)))
+
+==================
+Function with typed return and typed parameters
+==================
+
+public function test(data as Sensor.Data, test as Test) as Test {}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list
+   (identifier)
+   (type_identifier
+    type: (property_access
+      object: (identifier)
+      property: (identifier)))
+   (identifier)
+   (type_identifier
+    type: (identifier)))
+  (type_identifier
+   type: (identifier))
+  body: (block_statement)))
+
+==================
+Function with var in body
+==================
+
+public function test(data as Sensor.Data, test as Number) as Test {
+  var test = 1;
+}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list
+   (identifier)
+   (type_identifier
+    type: (property_access
+      object: (identifier)
+      property: (identifier)))
+   (identifier)
+   (type_identifier
+    type: (identifier)))
+  (type_identifier
+   type: (identifier))
+  body: (block_statement
+    (variable_declaration
+     name: (identifier)
+     value: (number_literal)))))
+
+==================
+Function typedef
+==================
+
+public function getInitialView() as Lang.Array<WatchUi.Views or WatchUi.InputDelegates>? {
+  var trainingView = new $.TrainingView(_logger);
+  var trainingInputDelegate = new $.TrainingInputDelegate(trainingView, _logger);
+  return [trainingView, trainingInputDelegate] as Lang.Array<WatchUi.View or WatchUi.InputDelegate>;
+}
+
+---
+
+(source_file
+ (function_definition
+  (function_keyword)
+  name: (identifier)
+  (parameter_list)
+  (type_identifier
+   type: (array_type
+     (binary_expression
+      left: (property_access
+        object: (identifier)
+        property: (identifier))
+      operator: (operator)
+      right: (property_access
+        object: (identifier)
+        property: (identifier))))
+   nullable: (nullable))
+  body: (block_statement
+    (variable_declaration
+     name: (identifier)
+     value: (object_constructor
+       (property_access
+        object: (global_namespace)
+        property: (identifier))
+       (parameter_list
+        (identifier))))
+    (variable_declaration
+     name: (identifier)
+     value: (object_constructor
+       (property_access
+        object: (global_namespace)
+        property: (identifier))
+       (parameter_list
+        (identifier)
+        (identifier))))
+    (return_statement
+     (array_expression
+      (identifier)
+      (identifier)
+      (type_identifier
+       type: (array_type
+         (binary_expression
+          left: (property_access
+            object: (identifier)
+            property: (identifier))
+          operator: (operator)
+          right: (property_access
+            object: (identifier)
+            property: (identifier))))))))))
