@@ -9,7 +9,7 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   (identifier)
   (parameter_list)
   (block_statement)))
@@ -24,7 +24,7 @@ public function test(data, test) {}
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list
    (identifier)
@@ -42,7 +42,7 @@ public function test(data as Sensor.Data, test as Test) {}
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   (identifier)
   (parameter_list
    (identifier)
@@ -56,6 +56,29 @@ public function test(data as Sensor.Data, test as Test) {}
   (block_statement)))
 
 ==================
+Function with nullable typed parameters
+==================
+
+public function onStop(state as Lang.Dictionary?) as Void {
+}
+
+---
+
+
+(source_file
+ (function_definition
+  (object_keyword)
+  (identifier)
+  (parameter_list
+   (identifier)
+   (type_identifier
+    (dictionary_type)
+    (nullable)))
+  (type_identifier
+   (identifier))
+ (block_statement)))
+
+==================
 Function with typed return
 ==================
 
@@ -65,7 +88,7 @@ public function test() as Test {}
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   (type_identifier
@@ -82,7 +105,7 @@ public function test(data as Sensor.Data, test as Test) as Test {}
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list
    (identifier)
@@ -109,7 +132,7 @@ public function test(data as Sensor.Data, test as Number) as Test {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list
    (identifier)
@@ -128,6 +151,35 @@ public function test(data as Sensor.Data, test as Number) as Test {
      value: (number_literal)))))
 
 ==================
+Function with function call and new_expression
+==================
+
+public function initialize() {
+  AppBase.initialize();
+  _logger = new Logger();
+}
+
+---
+
+(source_file
+ (function_definition
+  (object_keyword)
+  name: (identifier)
+  (parameter_list)
+  body: (block_statement
+    (function_call
+     function: (property_access
+       object: (identifier)
+       property: (identifier))
+     (parameter_list))
+    (assignment_expression
+     left: (identifier)
+     right: (new_expression
+       (function_call
+        function: (identifier)
+        (parameter_list)))))))
+
+==================
 Function typedef
 ==================
 
@@ -141,7 +193,7 @@ public function getInitialView() as Lang.Array<WatchUi.Views or WatchUi.InputDel
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   (type_identifier
@@ -158,21 +210,23 @@ public function getInitialView() as Lang.Array<WatchUi.Views or WatchUi.InputDel
   body: (block_statement
     (variable_declaration
      name: (identifier)
-     value: (object_constructor
-       (property_access
-        object: (global_namespace)
-        property: (identifier))
-       (parameter_list
-        (identifier))))
+     value: (new_expression
+       (object_constructor
+        (property_access
+         object: (global_namespace)
+         property: (identifier))
+        (parameter_list
+         (identifier)))))
     (variable_declaration
      name: (identifier)
-     value: (object_constructor
-       (property_access
-        object: (global_namespace)
-        property: (identifier))
-       (parameter_list
-        (identifier)
-        (identifier))))
+     value: (new_expression
+       (object_constructor
+        (property_access
+         object: (global_namespace)
+         property: (identifier))
+        (parameter_list
+         (identifier)
+         (identifier)))))
     (return_statement
      (array_expression
       (identifier)

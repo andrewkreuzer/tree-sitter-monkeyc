@@ -8,8 +8,8 @@ class Test {}
 
 (source_file
  (class_definition
-  (identifier)
-  (block_statement)))
+  name: (identifier)
+  body: (block_statement)))
 
 ==================
 Class with extends
@@ -21,9 +21,9 @@ class Test2 extends Test.T {}
 
 (source_file
  (class_definition
-  (identifier)
+  name: (identifier)
   (extends_clause
    (property_access
-    (identifier)
-    (identifier)))
-  (block_statement)))
+    object: (identifier)
+    property: (identifier)))
+  body: (block_statement)))

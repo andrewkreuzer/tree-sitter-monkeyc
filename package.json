@@ -9,7 +9,7 @@
   "main": "grammar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "move-highlights": "cp queries/highlights.scm ~/.config/nvim/queries/monkeyc/highlights.scm"
+    "move-highlights": "cp queries/*.scm ~/.config/nvim/queries/monkeyc/"
   },
   "author": "",
   "license": "ISC",

@@ -29,7 +29,7 @@
     "fields": {
       "size": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "number_literal",
@@ -45,6 +45,10 @@
         {
           "type": "array_type",
           "named": true
+        },
+        {
+          "type": "parameter_list",
+          "named": true
         }
       ]
     }
@@ -59,10 +63,6 @@
       "types": [
         {
           "type": "arithmetic_expression",
-          "named": true
-        },
-        {
-          "type": "array_constructor",
           "named": true
         },
         {
@@ -106,11 +106,15 @@
           "named": true
         },
         {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
         {
-          "type": "object_constructor",
+          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -150,14 +154,10 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "arithmetic_expression",
-          "named": true
-        },
-        {
-          "type": "array_constructor",
           "named": true
         },
         {
@@ -209,11 +209,15 @@
           "named": true
         },
         {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
         {
-          "type": "object_constructor",
+          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -258,15 +262,11 @@
         ]
       },
       "right": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -310,15 +310,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -359,15 +359,11 @@
     "named": true,
     "fields": {
       "left": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -411,15 +407,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -459,15 +455,11 @@
         ]
       },
       "right": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -511,15 +503,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -559,7 +551,27 @@
       "required": false,
       "types": [
         {
+          "type": "arithmetic_expression",
+          "named": true
+        },
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
           "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
           "named": true
         },
         {
@@ -571,7 +583,7 @@
           "named": true
         },
         {
-          "type": "class_member",
+          "type": "compound_assignment_expression",
           "named": true
         },
         {
@@ -579,7 +591,15 @@
           "named": true
         },
         {
+          "type": "container_access",
+          "named": true
+        },
+        {
           "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "dictionary_expression",
           "named": true
         },
         {
@@ -595,11 +615,11 @@
           "named": true
         },
         {
-          "type": "expression_statement",
+          "type": "for_statement",
           "named": true
         },
         {
-          "type": "for_statement",
+          "type": "function_call",
           "named": true
         },
         {
@@ -607,7 +627,31 @@
           "named": true
         },
         {
+          "type": "global_namespace",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
           "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
           "named": true
         },
         {
@@ -615,7 +659,39 @@
           "named": true
         },
         {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "switch_case_statement",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "throw_statement",
+          "named": true
+        },
+        {
           "type": "try_catch_statement",
+          "named": true
+        },
+        {
+          "type": "type_check_expression",
+          "named": true
+        },
+        {
+          "type": "type_definition",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
           "named": true
         },
         {
@@ -628,6 +704,10 @@
         },
         {
           "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "variable_type_assignment",
           "named": true
         },
         {
@@ -648,101 +728,15 @@
     "fields": {}
   },
   {
-    "type": "class_definition",
+    "type": "case_statement",
     "named": true,
     "fields": {
-      "body": {
+      "case": {
         "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "block_statement",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "extends_clause",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "class_member",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "type_identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "compound_assignment_expression",
-    "named": true,
-    "fields": {
-      "left": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "operator": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "assignment_operator",
-            "named": true
-          }
-        ]
-      },
-      "right": {
-        "multiple": true,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -786,15 +780,337 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "block_statement",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "break_statement",
+            "named": true
+          },
+          {
+            "type": "class_definition",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "constant_declaration",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "do_while_statement",
+            "named": true
+          },
+          {
+            "type": "empty_statement",
+            "named": true
+          },
+          {
+            "type": "enum_definition",
+            "named": true
+          },
+          {
+            "type": "for_statement",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "function_definition",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "switch_case_statement",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "throw_statement",
+            "named": true
+          },
+          {
+            "type": "try_catch_statement",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "type_definition",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          },
+          {
+            "type": "using_statement",
+            "named": true
+          },
+          {
+            "type": "variable_assignment",
+            "named": true
+          },
+          {
+            "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "variable_type_assignment",
+            "named": true
+          },
+          {
+            "type": "while_statement",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "class_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block_statement",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "extends_clause",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compound_assignment_expression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "assignment_operator",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -840,15 +1156,11 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -892,15 +1204,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -946,15 +1258,11 @@
     "named": true,
     "fields": {
       "index": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -998,15 +1306,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1036,15 +1344,11 @@
         ]
       },
       "name": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1088,15 +1392,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1133,19 +1437,190 @@
     "fields": {}
   },
   {
+    "type": "default_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "arithmetic_expression",
+          "named": true
+        },
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "break_statement",
+          "named": true
+        },
+        {
+          "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "compound_assignment_expression",
+          "named": true
+        },
+        {
+          "type": "constant_declaration",
+          "named": true
+        },
+        {
+          "type": "container_access",
+          "named": true
+        },
+        {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "dictionary_expression",
+          "named": true
+        },
+        {
+          "type": "do_while_statement",
+          "named": true
+        },
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "enum_definition",
+          "named": true
+        },
+        {
+          "type": "for_statement",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_namespace",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "switch_case_statement",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "throw_statement",
+          "named": true
+        },
+        {
+          "type": "try_catch_statement",
+          "named": true
+        },
+        {
+          "type": "type_check_expression",
+          "named": true
+        },
+        {
+          "type": "type_definition",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "using_statement",
+          "named": true
+        },
+        {
+          "type": "variable_assignment",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "variable_type_assignment",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "dictionary_entry",
     "named": true,
     "fields": {
       "key": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1189,15 +1664,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1227,15 +1702,11 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1279,15 +1750,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1338,15 +1809,11 @@
     "named": true,
     "fields": {
       "key": {
-        "multiple": true,
-        "required": true,
+        "multiple": false,
+        "required": false,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1390,15 +1857,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1428,15 +1895,11 @@
         ]
       },
       "value": {
-        "multiple": true,
-        "required": true,
+        "multiple": false,
+        "required": false,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1480,15 +1943,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1524,11 +1987,35 @@
     "named": true,
     "fields": {
       "body": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
             "type": "block_statement",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
             "named": true
           },
           {
@@ -1540,7 +2027,7 @@
             "named": true
           },
           {
-            "type": "class_member",
+            "type": "compound_assignment_expression",
             "named": true
           },
           {
@@ -1548,7 +2035,15 @@
             "named": true
           },
           {
+            "type": "container_access",
+            "named": true
+          },
+          {
             "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
             "named": true
           },
           {
@@ -1564,11 +2059,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "for_statement",
             "named": true
           },
           {
-            "type": "for_statement",
+            "type": "function_call",
             "named": true
           },
           {
@@ -1576,7 +2071,31 @@
             "named": true
           },
           {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
             "named": true
           },
           {
@@ -1584,7 +2103,39 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "switch_case_statement",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "throw_statement",
+            "named": true
+          },
+          {
             "type": "try_catch_statement",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "type_definition",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -1597,6 +2148,10 @@
           },
           {
             "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "variable_type_assignment",
             "named": true
           },
           {
@@ -1619,10 +2174,6 @@
           },
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -1666,15 +2217,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -1745,97 +2296,6 @@
     }
   },
   {
-    "type": "expression_statement",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "arithmetic_expression",
-          "named": true
-        },
-        {
-          "type": "array_constructor",
-          "named": true
-        },
-        {
-          "type": "array_expression",
-          "named": true
-        },
-        {
-          "type": "assignment_expression",
-          "named": true
-        },
-        {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "boolean_literal",
-          "named": true
-        },
-        {
-          "type": "compound_assignment_expression",
-          "named": true
-        },
-        {
-          "type": "container_access",
-          "named": true
-        },
-        {
-          "type": "dictionary_expression",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "global_namespace",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number_literal",
-          "named": true
-        },
-        {
-          "type": "object_constructor",
-          "named": true
-        },
-        {
-          "type": "property_access",
-          "named": true
-        },
-        {
-          "type": "string_literal",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "ternary_expression",
-          "named": true
-        },
-        {
-          "type": "type_check_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "extends_clause",
     "named": true,
     "fields": {},
@@ -1848,10 +2308,6 @@
           "named": true
         },
         {
-          "type": "array_constructor",
-          "named": true
-        },
-        {
           "type": "array_expression",
           "named": true
         },
@@ -1892,11 +2348,15 @@
           "named": true
         },
         {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
         {
-          "type": "object_constructor",
+          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -1941,25 +2401,15 @@
         ]
       },
       "condition": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expression_statement",
-            "named": true
-          }
-        ]
-      },
-      "increment": {
         "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "arithmetic_expression",
-            "named": true
+            "type": ";",
+            "named": false
           },
           {
-            "type": "array_constructor",
+            "type": "arithmetic_expression",
             "named": true
           },
           {
@@ -2003,15 +2453,101 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "increment": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -2057,15 +2593,11 @@
     "named": true,
     "fields": {
       "function": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -2109,15 +2641,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -2188,7 +2720,7 @@
       "required": true,
       "types": [
         {
-          "type": "function_keyword",
+          "type": "object_keyword",
           "named": true
         },
         {
@@ -2203,20 +2735,39 @@
     }
   },
   {
-    "type": "function_keyword",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "if_statement",
     "named": true,
     "fields": {
       "alternative": {
-        "multiple": false,
+        "multiple": true,
         "required": false,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
             "type": "block_statement",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
             "named": true
           },
           {
@@ -2228,7 +2779,7 @@
             "named": true
           },
           {
-            "type": "class_member",
+            "type": "compound_assignment_expression",
             "named": true
           },
           {
@@ -2236,7 +2787,15 @@
             "named": true
           },
           {
+            "type": "container_access",
+            "named": true
+          },
+          {
             "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
             "named": true
           },
           {
@@ -2252,11 +2811,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "for_statement",
             "named": true
           },
           {
-            "type": "for_statement",
+            "type": "function_call",
             "named": true
           },
           {
@@ -2264,7 +2823,31 @@
             "named": true
           },
           {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
             "named": true
           },
           {
@@ -2272,7 +2855,39 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "switch_case_statement",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "throw_statement",
+            "named": true
+          },
+          {
             "type": "try_catch_statement",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "type_definition",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -2285,6 +2900,10 @@
           },
           {
             "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "variable_type_assignment",
             "named": true
           },
           {
@@ -2307,10 +2926,6 @@
           },
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -2354,15 +2969,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -2392,11 +3007,35 @@
         ]
       },
       "consequence": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
             "type": "block_statement",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
             "named": true
           },
           {
@@ -2408,7 +3047,7 @@
             "named": true
           },
           {
-            "type": "class_member",
+            "type": "compound_assignment_expression",
             "named": true
           },
           {
@@ -2416,7 +3055,15 @@
             "named": true
           },
           {
+            "type": "container_access",
+            "named": true
+          },
+          {
             "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
             "named": true
           },
           {
@@ -2432,11 +3079,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "for_statement",
             "named": true
           },
           {
-            "type": "for_statement",
+            "type": "function_call",
             "named": true
           },
           {
@@ -2444,7 +3091,31 @@
             "named": true
           },
           {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
             "named": true
           },
           {
@@ -2452,7 +3123,39 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "switch_case_statement",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "throw_statement",
+            "named": true
+          },
+          {
             "type": "try_catch_statement",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "type_definition",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -2468,11 +3171,57 @@
             "named": true
           },
           {
+            "type": "variable_type_assignment",
+            "named": true
+          },
+          {
             "type": "while_statement",
             "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "method_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter_list",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "new_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array_constructor",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "object_constructor",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2500,6 +3249,11 @@
     }
   },
   {
+    "type": "object_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "object_operator",
     "named": true,
     "fields": {}
@@ -2519,10 +3273,6 @@
       "types": [
         {
           "type": "arithmetic_expression",
-          "named": true
-        },
-        {
-          "type": "array_constructor",
           "named": true
         },
         {
@@ -2566,11 +3316,15 @@
           "named": true
         },
         {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
         {
-          "type": "object_constructor",
+          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -2605,19 +3359,106 @@
     }
   },
   {
+    "type": "parenthesized_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arithmetic_expression",
+          "named": true
+        },
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "compound_assignment_expression",
+          "named": true
+        },
+        {
+          "type": "container_access",
+          "named": true
+        },
+        {
+          "type": "dictionary_expression",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "global_namespace",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "type_check_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "property_access",
     "named": true,
     "fields": {
       "object": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -2661,15 +3502,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -2723,7 +3564,639 @@
           "named": true
         },
         {
-          "type": "array_constructor",
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "compound_assignment_expression",
+          "named": true
+        },
+        {
+          "type": "container_access",
+          "named": true
+        },
+        {
+          "type": "dictionary_expression",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "global_namespace",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "type_check_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "arithmetic_expression",
+          "named": true
+        },
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "break_statement",
+          "named": true
+        },
+        {
+          "type": "class_definition",
+          "named": true
+        },
+        {
+          "type": "compound_assignment_expression",
+          "named": true
+        },
+        {
+          "type": "constant_declaration",
+          "named": true
+        },
+        {
+          "type": "container_access",
+          "named": true
+        },
+        {
+          "type": "continue_statement",
+          "named": true
+        },
+        {
+          "type": "dictionary_expression",
+          "named": true
+        },
+        {
+          "type": "do_while_statement",
+          "named": true
+        },
+        {
+          "type": "empty_statement",
+          "named": true
+        },
+        {
+          "type": "enum_definition",
+          "named": true
+        },
+        {
+          "type": "for_statement",
+          "named": true
+        },
+        {
+          "type": "function_call",
+          "named": true
+        },
+        {
+          "type": "function_definition",
+          "named": true
+        },
+        {
+          "type": "global_namespace",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "new_expression",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "property_access",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "switch_case_statement",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "throw_statement",
+          "named": true
+        },
+        {
+          "type": "try_catch_statement",
+          "named": true
+        },
+        {
+          "type": "type_check_expression",
+          "named": true
+        },
+        {
+          "type": "type_definition",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        },
+        {
+          "type": "using_statement",
+          "named": true
+        },
+        {
+          "type": "variable_assignment",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        },
+        {
+          "type": "variable_type_assignment",
+          "named": true
+        },
+        {
+          "type": "while_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "switch_case_statement",
+    "named": true,
+    "fields": {
+      "object": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case_statement",
+          "named": true
+        },
+        {
+          "type": "default_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ternary_expression",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "throw_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "arithmetic_expression",
           "named": true
         },
         {
@@ -2767,11 +4240,15 @@
           "named": true
         },
         {
+          "type": "new_expression",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
         {
-          "type": "object_constructor",
+          "type": "parenthesized_expression",
           "named": true
         },
         {
@@ -2799,369 +4276,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "source_file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "block_statement",
-          "named": true
-        },
-        {
-          "type": "break_statement",
-          "named": true
-        },
-        {
-          "type": "class_definition",
-          "named": true
-        },
-        {
-          "type": "class_member",
-          "named": true
-        },
-        {
-          "type": "constant_declaration",
-          "named": true
-        },
-        {
-          "type": "continue_statement",
-          "named": true
-        },
-        {
-          "type": "do_while_statement",
-          "named": true
-        },
-        {
-          "type": "empty_statement",
-          "named": true
-        },
-        {
-          "type": "enum_definition",
-          "named": true
-        },
-        {
-          "type": "expression_statement",
-          "named": true
-        },
-        {
-          "type": "for_statement",
-          "named": true
-        },
-        {
-          "type": "function_definition",
-          "named": true
-        },
-        {
-          "type": "if_statement",
-          "named": true
-        },
-        {
-          "type": "return_statement",
-          "named": true
-        },
-        {
-          "type": "try_catch_statement",
-          "named": true
-        },
-        {
-          "type": "using_statement",
-          "named": true
-        },
-        {
-          "type": "variable_assignment",
-          "named": true
-        },
-        {
-          "type": "variable_declaration",
-          "named": true
-        },
-        {
-          "type": "while_statement",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "ternary_expression",
-    "named": true,
-    "fields": {
-      "alternative": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
-            "named": true
-          },
-          {
-            "type": "array_expression",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean_literal",
-            "named": true
-          },
-          {
-            "type": "compound_assignment_expression",
-            "named": true
-          },
-          {
-            "type": "container_access",
-            "named": true
-          },
-          {
-            "type": "dictionary_expression",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "global_namespace",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "new",
-            "named": false
-          },
-          {
-            "type": "number_literal",
-            "named": true
-          },
-          {
-            "type": "object_constructor",
-            "named": true
-          },
-          {
-            "type": "property_access",
-            "named": true
-          },
-          {
-            "type": "string_literal",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "ternary_expression",
-            "named": true
-          },
-          {
-            "type": "type_check_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "condition": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
-            "named": true
-          },
-          {
-            "type": "array_expression",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean_literal",
-            "named": true
-          },
-          {
-            "type": "compound_assignment_expression",
-            "named": true
-          },
-          {
-            "type": "container_access",
-            "named": true
-          },
-          {
-            "type": "dictionary_expression",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "global_namespace",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "new",
-            "named": false
-          },
-          {
-            "type": "number_literal",
-            "named": true
-          },
-          {
-            "type": "object_constructor",
-            "named": true
-          },
-          {
-            "type": "property_access",
-            "named": true
-          },
-          {
-            "type": "string_literal",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "ternary_expression",
-            "named": true
-          },
-          {
-            "type": "type_check_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      },
-      "consequence": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
-            "named": true
-          },
-          {
-            "type": "array_expression",
-            "named": true
-          },
-          {
-            "type": "assignment_expression",
-            "named": true
-          },
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean_literal",
-            "named": true
-          },
-          {
-            "type": "compound_assignment_expression",
-            "named": true
-          },
-          {
-            "type": "container_access",
-            "named": true
-          },
-          {
-            "type": "dictionary_expression",
-            "named": true
-          },
-          {
-            "type": "function_call",
-            "named": true
-          },
-          {
-            "type": "global_namespace",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "new",
-            "named": false
-          },
-          {
-            "type": "number_literal",
-            "named": true
-          },
-          {
-            "type": "object_constructor",
-            "named": true
-          },
-          {
-            "type": "property_access",
-            "named": true
-          },
-          {
-            "type": "string_literal",
-            "named": true
-          },
-          {
-            "type": "symbol",
-            "named": true
-          },
-          {
-            "type": "ternary_expression",
-            "named": true
-          },
-          {
-            "type": "type_check_expression",
-            "named": true
-          },
-          {
-            "type": "unary_expression",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {
@@ -3221,15 +4335,11 @@
     "named": true,
     "fields": {
       "left": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3273,15 +4383,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3321,15 +4431,11 @@
         ]
       },
       "right": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3373,15 +4479,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3413,6 +4519,32 @@
     }
   },
   {
+    "type": "type_definition",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "type_identifier",
     "named": true,
     "fields": {
@@ -3427,15 +4559,11 @@
         ]
       },
       "type": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3487,15 +4615,19 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "method_type",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3531,15 +4663,11 @@
     "named": true,
     "fields": {
       "expression": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3583,15 +4711,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3647,108 +4775,13 @@
   {
     "type": "using_statement",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "arithmetic_expression",
-          "named": true
-        },
-        {
-          "type": "array_constructor",
-          "named": true
-        },
-        {
-          "type": "array_expression",
-          "named": true
-        },
-        {
-          "type": "assignment_expression",
-          "named": true
-        },
-        {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "boolean_literal",
-          "named": true
-        },
-        {
-          "type": "compound_assignment_expression",
-          "named": true
-        },
-        {
-          "type": "container_access",
-          "named": true
-        },
-        {
-          "type": "dictionary_expression",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "global_namespace",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number_literal",
-          "named": true
-        },
-        {
-          "type": "object_constructor",
-          "named": true
-        },
-        {
-          "type": "property_access",
-          "named": true
-        },
-        {
-          "type": "string_literal",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "ternary_expression",
-          "named": true
-        },
-        {
-          "type": "type_check_expression",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "variable_assignment",
-    "named": true,
     "fields": {
-      "name": {
-        "multiple": true,
+      "import": {
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3792,15 +4825,107 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "variable_assignment",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "compound_assignment_expression",
+            "named": true
+          },
+          {
+            "type": "container_access",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3830,15 +4955,11 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3882,15 +5003,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -3946,15 +5067,11 @@
         ]
       },
       "value": {
-        "multiple": true,
+        "multiple": false,
         "required": true,
         "types": [
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -3998,15 +5115,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -4037,6 +5154,36 @@
       }
     },
     "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "object_keyword",
+          "named": true
+        },
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_type_assignment",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
       "multiple": false,
       "required": false,
       "types": [
@@ -4052,11 +5199,35 @@
     "named": true,
     "fields": {
       "body": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
+            "type": ";",
+            "named": false
+          },
+          {
+            "type": "arithmetic_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
             "type": "block_statement",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
             "named": true
           },
           {
@@ -4068,7 +5239,7 @@
             "named": true
           },
           {
-            "type": "class_member",
+            "type": "compound_assignment_expression",
             "named": true
           },
           {
@@ -4076,7 +5247,15 @@
             "named": true
           },
           {
+            "type": "container_access",
+            "named": true
+          },
+          {
             "type": "continue_statement",
+            "named": true
+          },
+          {
+            "type": "dictionary_expression",
             "named": true
           },
           {
@@ -4092,11 +5271,11 @@
             "named": true
           },
           {
-            "type": "expression_statement",
+            "type": "for_statement",
             "named": true
           },
           {
-            "type": "for_statement",
+            "type": "function_call",
             "named": true
           },
           {
@@ -4104,7 +5283,31 @@
             "named": true
           },
           {
+            "type": "global_namespace",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
             "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "new_expression",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "property_access",
             "named": true
           },
           {
@@ -4112,7 +5315,39 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "switch_case_statement",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "throw_statement",
+            "named": true
+          },
+          {
             "type": "try_catch_statement",
+            "named": true
+          },
+          {
+            "type": "type_check_expression",
+            "named": true
+          },
+          {
+            "type": "type_definition",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
             "named": true
           },
           {
@@ -4125,6 +5360,10 @@
           },
           {
             "type": "variable_declaration",
+            "named": true
+          },
+          {
+            "type": "variable_type_assignment",
             "named": true
           },
           {
@@ -4147,10 +5386,6 @@
           },
           {
             "type": "arithmetic_expression",
-            "named": true
-          },
-          {
-            "type": "array_constructor",
             "named": true
           },
           {
@@ -4194,15 +5429,15 @@
             "named": true
           },
           {
-            "type": "new",
-            "named": false
+            "type": "new_expression",
+            "named": true
           },
           {
             "type": "number_literal",
             "named": true
           },
           {
-            "type": "object_constructor",
+            "type": "parenthesized_expression",
             "named": true
           },
           {
@@ -4378,6 +5613,10 @@
     "named": false
   },
   {
+    "type": "Method",
+    "named": false
+  },
+  {
     "type": "Toybox.Lang.Array",
     "named": false
   },
@@ -4406,6 +5645,10 @@
     "named": false
   },
   {
+    "type": "case",
+    "named": false
+  },
+  {
     "type": "catch",
     "named": false
   },
@@ -4423,6 +5666,10 @@
   },
   {
     "type": "continue",
+    "named": false
+  },
+  {
+    "type": "default",
     "named": false
   },
   {
@@ -4510,8 +5757,16 @@
     "named": true
   },
   {
+    "type": "switch",
+    "named": false
+  },
+  {
     "type": "symbol",
     "named": true
+  },
+  {
+    "type": "throw",
+    "named": false
   },
   {
     "type": "true",
@@ -4519,6 +5774,10 @@
   },
   {
     "type": "try",
+    "named": false
+  },
+  {
+    "type": "typedef",
     "named": false
   },
   {

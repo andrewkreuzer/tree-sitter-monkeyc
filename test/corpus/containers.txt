@@ -9,8 +9,9 @@ var untypedArray = new [10];
 (source_file
  (variable_declaration
   name: (identifier)
-  value: (array_constructor
-    size: (number_literal))))
+  value: (new_expression
+    (array_constructor
+     size: (number_literal)))))
 
 ==================
 Array typed
@@ -23,10 +24,11 @@ var typedArray = new Array<Number>[300];
 (source_file
  (variable_declaration
   name: (identifier)
-  value: (array_constructor
-    (array_type
-     (identifier))
-    size: (number_literal))))
+  value: (new_expression
+    (array_constructor
+     (array_type
+      (identifier))
+     size: (number_literal)))))
 
 ==================
 Array assignment typeless
@@ -45,6 +47,42 @@ var untypedArray = [1, 2, 3, 4, 5];
     (number_literal)
     (number_literal)
     (number_literal))))
+
+==================
+Array assignment object constructor
+==================
+
+var a = new Array();
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (new_expression
+    (array_constructor
+     (parameter_list)))))
+
+==================
+Array assignment nullable typed
+==================
+
+var typedArray = [1, 2, 3, 4, 5] as Array?;
+
+---
+
+(source_file
+ (variable_declaration
+  name: (identifier)
+  value: (array_expression
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (number_literal)
+    (type_identifier
+     type: (array_type)
+     nullable: (nullable)))))
 
 ==================
 Array assignment typed
@@ -215,7 +253,7 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement

@@ -13,7 +13,7 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
@@ -29,15 +29,14 @@ public function test() {
      initializer: (variable_declaration
        name: (identifier)
        value: (number_literal))
-     condition: (expression_statement
-       (binary_expression
-        left: (identifier)
-        operator: (operator)
-        right: (function_call
-          function: (property_access
-            object: (identifier)
-            property: (identifier))
-          (parameter_list))))
+     condition: (binary_expression
+       left: (identifier)
+       operator: (operator)
+       right: (function_call
+         function: (property_access
+           object: (identifier)
+           property: (identifier))
+         (parameter_list)))
      increment: (arithmetic_expression
        (identifier)
        (arithmetic_operator))
@@ -60,23 +59,23 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
     (variable_declaration
      name: (identifier)
-     value: (array_constructor
-       size: (number_literal)))
+     value: (new_expression
+       (array_constructor
+        size: (number_literal))))
     (for_statement
      initializer: (variable_declaration
        name: (identifier)
        value: (number_literal))
-     condition: (expression_statement
-       (binary_expression
-        left: (identifier)
-        operator: (operator)
-        right: (number_literal)))
+     condition: (binary_expression
+       left: (identifier)
+       operator: (operator)
+       right: (number_literal))
      increment: (compound_assignment_expression
        left: (identifier)
        operator: (assignment_operator)
@@ -86,8 +85,9 @@ public function test() {
         name: (container_access
           name: (identifier)
           index: (identifier))
-        value: (array_constructor
-          size: (number_literal))))))))
+        value: (new_expression
+          (array_constructor
+           size: (number_literal)))))))))
 
 ==================
 While loop
@@ -104,24 +104,22 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
-    (expression_statement
      (assignment_expression
       left: (identifier)
-      right: (number_literal)))
+      right: (number_literal))
     (while_statement
      condition: (binary_expression
        left: (identifier)
        operator: (operator)
        right: (number_literal))
      body: (block_statement
-       (expression_statement
         (arithmetic_expression
          (identifier)
-         (arithmetic_operator))))))))
+         (arithmetic_operator)))))))
 
 ==================
 While loop (Do While)
@@ -139,7 +137,7 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
@@ -148,10 +146,9 @@ public function test() {
      value: (number_literal))
     (do_while_statement
      body: (block_statement
-       (expression_statement
         (arithmetic_expression
          (identifier)
-         (arithmetic_operator))))
+         (arithmetic_operator)))
      condition: (binary_expression
        left: (identifier)
        operator: (operator)

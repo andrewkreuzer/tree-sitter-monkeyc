@@ -8,6 +8,7 @@ public function test() {
   // This for loop should only print the values 5, 6, and 7.
   for (var i = 0; i < 10; i += 1) {
     if (i < 5) {
+      var thing = "test";
       continue;
     }
     System.println(i);
@@ -21,11 +22,11 @@ public function test() {
 
 (source_file
  (using_statement
-  (property_access
-   object: (identifier)
-   property: (identifier)))
+  import: (property_access
+    object: (identifier)
+    property: (identifier)))
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
@@ -34,11 +35,10 @@ public function test() {
      initializer: (variable_declaration
        name: (identifier)
        value: (number_literal))
-     condition: (expression_statement
-       (binary_expression
-        left: (identifier)
-        operator: (operator)
-        right: (number_literal)))
+     condition: (binary_expression
+       left: (identifier)
+       operator: (operator)
+       right: (number_literal))
      increment: (compound_assignment_expression
        left: (identifier)
        operator: (assignment_operator)
@@ -50,14 +50,16 @@ public function test() {
           operator: (operator)
           right: (number_literal))
         consequence: (block_statement
+          (variable_declaration
+           name: (identifier)
+           value: (string_literal))
           (continue_statement)))
-       (expression_statement
-        (function_call
-         function: (property_access
-           object: (identifier)
-           property: (identifier))
-         (parameter_list
-          (identifier))))
+       (function_call
+        function: (property_access
+          object: (identifier)
+          property: (identifier))
+        (parameter_list
+         (identifier)))
        (if_statement
         condition: (binary_expression
           left: (number_literal)
@@ -65,3 +67,86 @@ public function test() {
           right: (identifier))
         consequence: (block_statement
           (break_statement))))))))
+
+==================
+Switch case statement
+==================
+
+switch(item.getId()) {
+  case 1:
+    _trainingView.endSession();
+    WatchUi.popView(WatchUi.SLIDE_RIGHT);
+    break;
+  case 0:
+    _trainingView.discardSession();
+    WatchUi.popView(WatchUi.SLIDE_RIGHT);
+    break;
+  default:
+    var message = Lang.format("Unexpected item id: $1$", [item.getId()]);
+    throw new UnexpectedTypeException(message, null, null);
+}
+
+---
+
+(source_file
+ (switch_case_statement
+  object: (function_call
+    function: (property_access
+      object: (identifier)
+      property: (identifier))
+    (parameter_list))
+    (case_statement
+      case: (number_literal)
+      consequence: (function_call
+        function: (property_access
+          object: (identifier)
+          property: (identifier))
+        (parameter_list))
+      consequence: (function_call
+        function: (property_access
+          object: (identifier)
+          property: (identifier))
+        (parameter_list
+          (property_access
+            object: (identifier)
+            property: (identifier))))
+      consequence: (break_statement))
+    (case_statement
+      case: (number_literal)
+      consequence: (function_call
+        function: (property_access
+          object: (identifier)
+          property: (identifier))
+        (parameter_list))
+      consequence: (function_call
+        function: (property_access
+          object: (identifier)
+          property: (identifier))
+        (parameter_list
+          (property_access
+            object: (identifier)
+            property: (identifier))))
+      consequence: (break_statement))
+    (default_statement
+      (variable_declaration
+        name: (identifier)
+        value: (function_call
+          function: (property_access
+            object: (identifier)
+            property: (identifier))
+          (parameter_list
+            (string_literal)
+            (array_expression
+              (function_call
+                function: (property_access
+                  object: (identifier)
+                  property: (identifier))
+                (parameter_list))))))
+      (throw_statement
+        (new_expression
+          (function_call
+            function: (identifier)
+            (parameter_list
+              (identifier)
+              (identifier)
+              (identifier))))))))

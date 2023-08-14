@@ -38,7 +38,7 @@ var _test as Lang.String;
 ---
 
 (source_file
- (class_member
+ (variable_type_assignment
   name: (identifier)
   (type_identifier
    type: (property_access
@@ -57,14 +57,13 @@ public function test() {
 
 (source_file
  (function_definition
-  (function_keyword)
+  (object_keyword)
   name: (identifier)
   (parameter_list)
   body: (block_statement
-    (expression_statement
      (assignment_expression
       left: (identifier)
-      right: (string_literal))))))
+      right: (string_literal)))))
 
 ==================
 Variable Array access

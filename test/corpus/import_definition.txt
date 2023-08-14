@@ -10,14 +10,14 @@ using Toybox.WatchUi;
 
 (source_file
  (using_statement
-  (property_access
-   (identifier)
-   (identifier)))
+  import: (property_access
+   object: (identifier)
+   property: (identifier)))
  (using_statement
-  (property_access
-   (identifier)
-   (identifier)))
+  import: (property_access
+   object: (identifier)
+   property: (identifier)))
  (using_statement
-  (property_access
-   (identifier)
-   (identifier))))
+  import: (property_access
+   object: (identifier)
+   property: (identifier))))
